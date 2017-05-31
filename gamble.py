@@ -6,7 +6,8 @@ Email: jander43@vols.utk.edu
 Description: Gambler's Ruin simulator for command line
 References: https://en.wikipedia.org/wiki/Gambler%27s_ruin
 Usage:
-    gamble [-mi] [<games> <sets>]
+    gamble [-mi] <games> <sets>
+    gamble [-m] (-i)
 """
 
 # libs
