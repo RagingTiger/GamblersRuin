@@ -11,7 +11,8 @@ pip install -r requirements.txt
 
 ## Usage
 ```
-$ python gamble.py [-mi] [<games> <sets>]
+gamble [-mi] <games> <sets>
+gamble [-m] (-i)
 ```
 
 ## Example
