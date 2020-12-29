@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 """
-Author: John D. Anderson
-Email: jander43@vols.utk.edu
 Description: Gambler's Ruin simulator for command line
 References: https://en.wikipedia.org/wiki/Gambler%27s_ruin
 Usage:
@@ -17,13 +15,12 @@ import readline
 import termcolor
 import numpy
 
-
 # funcs
 def print_matrix(matrix):
     """Print out numpy matrix."""
-    print ''
-    print matrix
-    print ''
+    print('')
+    print(matrix)
+    print('')
 
 
 def ctxt(txt, color='yellow'):
@@ -36,7 +33,7 @@ def warn(txt, exit=True):
     if exit:
         sys.exit(ctxt(txt, color='red'))
     else:
-        print ctxt(txt, color='red')
+        print(ctxt(txt, color='red'))
 
 
 # classes
@@ -97,10 +94,10 @@ class GamblersRuin(object):
         percentage = (float(wins) / params['total']) * 100
 
         # Print statements #
-        print ctxt("Wins = " + str(wins))
-        print ctxt("Losses = " + str(losses))
-        print ctxt("Percentage Wins = " + str(percentage) + "%")
-        print ctxt("Percentage Edge = " + str(percentage - 50.00) + "%\n")
+        print(ctxt("Wins = " + str(wins)))
+        print(ctxt("Losses = " + str(losses)))
+        print(ctxt("Percentage Wins = " + str(percentage) + "%"))
+        print(ctxt("Percentage Edge = " + str(percentage - 50.00) + "%\n"))
 
         # return wins/losses
         return {'1': wins, '0': losses}
@@ -109,12 +106,12 @@ class GamblersRuin(object):
         """Starts interactive session to store state of games."""
         while True:
             try:
-                cmd = raw_input(self.prompt)
+                cmd = input(self.prompt)
                 self.execute_cmd(cmd)
             except EOFError:
                 warn('\nClosing interactive session')
             except KeyboardInterrupt:
-                print ''
+                print('')
 
     def parse_cmd(self, cmd):
         """Parse commands for interactive mode."""
@@ -144,7 +141,7 @@ class GamblersRuin(object):
                     'help                 Prints this help message\n')
 
         # print help
-        print ctxt(help_msg, color='red')
+        print(ctxt(help_msg, color='red'))
 
     def total(self, args):
         """Calculates and prints running total."""
@@ -163,7 +160,7 @@ class GamblersRuin(object):
         ).format(wins, losses, percent_wins, edge)
 
         # print totals
-        print ctxt(total_string)
+        print(ctxt(total_string))
 
     def run(self, cmd_list):
         """Runs the simulation."""
@@ -181,7 +178,7 @@ class GamblersRuin(object):
                           'sets': int(self.clargs['<sets>']),
                           'matrix': self.clargs['-m']}
             else:
-                print 'Usage Error: Type \'help\' for more details'
+                print('Usage Error: Type \'help\' for more details')
                 return
 
         # execute simulation
