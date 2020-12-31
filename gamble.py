@@ -70,7 +70,8 @@ class GamblersRuin(object):
         params['total'] = params['games'] * params['sets']
 
         # create numpy array
-        outcome = numpy.zeros((params['sets'], params['games']))
+        outcome = numpy.zeros((params['sets'], params['games']),
+                              dtype=numpy.int8)
 
         # start simulation
         for i in range(params['sets']):
